@@ -4,7 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .clearfix{
@@ -27,7 +28,15 @@ body{
     color: #ffffff;
     // divided page area
     display: grid;
-    grid-template-rows: 97vh 3vh;
+    grid-template-rows: minmax(97vh, auto) 3vh;
+
+    @media only screen and (max-height: 800px) {
+        grid-template-rows: minmax(95vh, auto) 5vh;
+    }
+    @media only screen and (max-height: 500px) {
+        grid-template-rows: minmax(92vh, auto) 8vh;
+    }
+
 }
 
 // =============================== home.ejs ==================================
@@ -35,6 +44,7 @@ body{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    min-height: auto;
 
     &__header{
         margin: 5rem auto;
@@ -92,6 +102,7 @@ body{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    min-height: auto;
 
     &__header{
         margin: 3rem auto;
@@ -127,9 +138,14 @@ body{
     & .btn{
         text-decoration: none;
         color: #414345;
+        margin-bottom: 1rem;
 
         &:hover{
             color: #ffffff;
+        }
+
+        @media only screen and (max-height: 800px) {
+            margin-bottom: 2rem;
         }
     }
 }
@@ -142,4 +158,8 @@ footer{
     background-color: #ff8a00;
     text-align: center;
     font-weight: bold;
+
+    @media only screen and (max-height: 800px) {
+        margin-top: 2rem;
+    }
 }

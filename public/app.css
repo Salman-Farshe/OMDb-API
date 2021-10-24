@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden; }
+  scroll-behavior: smooth;
+  overflow-x: hidden; }
 
 .clearfix {
   overflow: auto; }
@@ -23,12 +24,19 @@ body {
   background-color: #627c9d;
   color: #ffffff;
   display: grid;
-  grid-template-rows: 97vh 3vh; }
+  grid-template-rows: minmax(97vh, auto) 3vh; }
+  @media only screen and (max-height: 800px) {
+    body {
+      grid-template-rows: minmax(95vh, auto) 5vh; } }
+  @media only screen and (max-height: 500px) {
+    body {
+      grid-template-rows: minmax(92vh, auto) 8vh; } }
 
 .movie {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center; }
+  align-items: center;
+  min-height: auto; }
   .movie__header {
     margin: 5rem auto; }
     .movie__header h1 {
@@ -68,7 +76,8 @@ body {
 .search {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center; }
+  align-items: center;
+  min-height: auto; }
   .search__header {
     margin: 3rem auto;
     text-align: center;
@@ -92,9 +101,13 @@ body {
         padding: 0.2rem; }
   .search .btn {
     text-decoration: none;
-    color: #414345; }
+    color: #414345;
+    margin-bottom: 1rem; }
     .search .btn:hover {
       color: #ffffff; }
+    @media only screen and (max-height: 800px) {
+      .search .btn {
+        margin-bottom: 2rem; } }
 
 footer {
   width: 100vw;
@@ -103,3 +116,6 @@ footer {
   background-color: #ff8a00;
   text-align: center;
   font-weight: bold; }
+  @media only screen and (max-height: 800px) {
+    footer {
+      margin-top: 2rem; } }
