@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.clearfix{
+    overflow: auto;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+html{
+    font-size: 1rem;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    background-color: #627c9d;
+    color: #ffffff;
+    // divided page area
+    display: grid;
+    grid-template-rows: 97vh 3vh;
+}
+
+// =============================== home.ejs ==================================
+.movie{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &__header{
+        margin: 5rem auto;
+
+        h1{
+            /* Set the background color */
+            background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+            /* Mask the color to the text, and remove the rest  */
+            -webkit-background-clip: text;
+            /* Make the text fill color value transparent so the masked background color comes through */
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.1rem;
+        }
+        p{
+            background: linear-gradient(to right, #FDFC47 0%, #24FE41 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.2rem;
+            font-weight: bold;
+        }
+    }
+
+    &__form{
+        h2{
+            letter-spacing: 0.5rem;
+            word-spacing: 0.3rem;
+        }
+
+        input[type="text"]{
+            display: block;
+            width: 100%;
+            margin: 1rem auto;
+            padding: 0.4rem;
+            text-align: center;
+            border: none;
+            border-radius: 0.4rem;
+
+            &:focus{
+                border: none;
+                outline: none;
+                border-bottom: 3px solid #28a228;
+            }
+        }
+
+        button{
+            float: right;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.6rem;
+        }
+    }
+}
+
+// =============================== result.ejs =================================
+.search{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &__header{
+        margin: 3rem auto;
+        text-align: center;
+        letter-spacing: 0.2rem;
+
+        & h1{
+            background: linear-gradient(to right, #FDFC47 0%, #24FE41 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        & p{
+            background: linear-gradient(to right, #FC466B 0%, #3F5EFB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+    }
+
+    &__result{
+        margin-bottom: 2rem;
+        ol{
+            color: #ffffff;
+            text-align: center;
+            li{
+                border-bottom: 2px solid #FDC830;
+                padding: 0.2rem;
+            }
+        }
+    }
+
+    & .btn{
+        text-decoration: none;
+        color: #414345;
+
+        &:hover{
+            color: #ffffff;
+        }
+    }
+}
+
+// ========================= footer =================================
+footer{
+    width: 100vw;
+    height: 100%;
+    color: #ffffff;
+    background-color: #ff8a00;
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+
+<div class="container-fluid movie">
+    <div class="movie__header">
+        <h1>
+            OMDb API 
+        </h1>
+        <p>The Open Movie Database</p>
+    </div>
+    <div class="movie__form">
+        <h2>
+            Search Movies
+        </h2>
+        <form action="/search" method="get" class="clearfix">
+            <input type="text" name="name" id="name" placeholder="Movies Name" required>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
