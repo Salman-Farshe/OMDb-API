@@ -16,8 +16,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "compile:sass": "node-sass public/app.scss public/app.css -w",
-    "start": "node app.js"
+    "start": "node app.js",
+    "compile:sass": "node-sass public/app.scss public/app.css -w"
   },
   "author": "Salman Farshe",
   "license": "ISC"
