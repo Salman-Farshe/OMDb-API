@@ -38,7 +38,7 @@ app.get("/search", (req, res) => {
 // where no routes are present or wrong routes
 app.get("*", (req, res) => {
     res.send("Oopps !!! 404 not found");
-})
+});
 
 app.listen(port, ()=> {
     console.log('Server Starting');
